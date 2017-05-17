@@ -32,4 +32,12 @@ public class Ets2BookmarksService {
         return ets2BookmarksDAO.getBookmarksDuringThePeriod(date, date, limit, offset);
     }
 
+    public void deleteBookmarksDuringThePeriod(DateTime first, DateTime last) throws DaoException {
+        ets2BookmarksDAO.deleteBookmarksDuringThePeriod(first, last);
+    }
+
+    public void deleteBookmarksDuringThePeriod(DateTime date) throws DaoException {
+        ets2BookmarksDAO.deleteBookmarksDuringThePeriod(date, date);
+    }
+
 }

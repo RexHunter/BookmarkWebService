@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface Ets2BookmarksDAO {
     List<Bookmark> getBookmarksDuringThePeriod(DateTime first, DateTime last, Integer limit, Integer offset) throws DaoException;
+    void deleteBookmarksDuringThePeriod(DateTime first, DateTime last) throws DaoException;
 }

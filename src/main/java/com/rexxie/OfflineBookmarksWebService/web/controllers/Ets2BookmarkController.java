@@ -42,4 +42,16 @@ public class Ets2BookmarkController {
     ) throws Exception {
         return ets2BookmarksService.getBookmarksByDate(new DateTime(date), limit, offset);
     }
+
+    @RequestMapping(value = "/bookmarks/ets2/duringThePeriod", method = RequestMethod.DELETE)
+    public void deleteETS2BookmarksDuringThePeriod(@RequestParam("first") String first,
+                                                   @RequestParam("last") String last
+    ) throws Exception {
+        ets2BookmarksService.deleteBookmarksDuringThePeriod(new DateTime(first), new DateTime(last));
+    }
+
+    @RequestMapping(value = "/bookmarks/ets2/byDate/{date}", method = RequestMethod.DELETE)
+    public void deleteETS2BookmarksByDate(@PathVariable("date") String date) throws Exception {
+        ets2BookmarksService.deleteBookmarksDuringThePeriod(new DateTime(date));
+    }
 }
